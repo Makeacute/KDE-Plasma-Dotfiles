@@ -29,7 +29,7 @@ $cmd_duration\
 $line_break\
 $character"""
 
-palette = 'gray_scale'
+palette = 'light_dark'
 
 [os]
 disabled = false
@@ -170,7 +170,7 @@ show_notifications = true
 min_time_to_notify = 45000
 
 # PALETTES
-[palettes.gray_scale]
+[palettes.light_dark]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
 pink = "#f5c2e7"
