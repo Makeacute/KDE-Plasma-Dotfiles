@@ -171,5 +171,7 @@ To install these dotfiles, you can clone the repository and use a tool like **GN
 ## :link: Attribution and Source
 
 * **Rofi Configuration Source:** [edr3x/.dotfiles Rofi Config](https://github.com/edr3x/.dotfiles/tree/main/rofi/.config/rofi)
+
 * **Starship Presets:** These monochrome presets are modifications of the official **Catppuccin Powerline preset** for Starship.
+
 * **Original Preset Source:** [Starship Catppuccin Powerline](https://starship.rs/presets/catppuccin-powerline)
