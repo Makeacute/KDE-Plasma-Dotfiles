@@ -2,7 +2,6 @@
 
 A collection of configuration files (dotfiles) for a clean, high-contrast, and productive KDE Plasma desktop environment on Arch Linux.
 
-The goal of this repository is to provide a consistent, minimalist aesthetic using the Catppuccin color scheme (Mocha).
 
 ---
 
