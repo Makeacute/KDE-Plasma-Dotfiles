@@ -33,16 +33,19 @@ The Rofi configurations are set up to provide a fast, visually matching applicat
 ### Preview: Starship Light → Dark
 
 This is what the Starship terminal prompt looks like using the **Light → Dark** configuration:
+
 ![Starship Light to Dark Preview](assets/starship-light-dark.png)
 
 ### Preview: Starship Dark → Light
 
 This is what the Starship terminal prompt looks like using the **Dark → Light** configuration:
+
 ![Starship Dark to Light Preview](assets/starship-dark-light.png)
 
 ### Preview: Rofi Application Launcher
 
 This is what the **Rofi** launcher looks like with the custom `tokyo.rasi` theme:
+
 ![Rofi Launcher Preview](assets/rofi-preview.png)
 
 ---
