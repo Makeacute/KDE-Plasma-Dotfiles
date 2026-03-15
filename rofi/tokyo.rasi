@@ -1,18 +1,49 @@
-* {
-  bg0     : #000000;
-  bg1     : #111111;
-  bg2     : #1a1a1a;
-  bg3     : #2a2a2a;
-  fg0     : #ffffff;
-  fg1     : #cccccc;
-  fg2     : #888888;
-  red     : #f7768e;
-  green   : #9ece6a;
-  yellow  : #e0af68;
-  blue    : #7aa2f7;
-  magenta : #9a7ecc;
-  cyan    : #4abaaf;
+/**
+ * Pywal Color Variables for Rofi
+ * Generated from: /home/lucian/Wallpapers/andrew-neel-xNiJJHl0WP4-unsplash.jpg
+ * Generated at: Wed Feb 11 04:24:14 PM EET 2026
+ * Primary color (color4): #5b5a54
+ * Background: #121211 (brightness: 17)
+ */
 
-  accent: #808080;
-  urgent: #e0af68;
+* {
+    /* Background colors - dark, tinted with primary wallpaper color */
+    bg0:      #121211;
+    bg1:      #1d1d1c;
+    bg2:      #292928;
+    bg3:      #353534;
+
+    /* Foreground colors */
+    fg0:      #a1a1a1;
+    fg1:      #a1a1a1;
+    fg2:      #434343;
+
+    /* Accent color - primary wallpaper color */
+    accent:   #5b5a54;
+    
+    /* Urgent color */
+    urgent:   #3c3e3a;
+
+    /* Selection color */
+    selected: #2e2e2d;
+
+    /* Full pywal palette */
+    background: #121211;
+    foreground: #a1a1a1;
+    color0:   #040404;
+    color1:   #3c3e3a;
+    color2:   #4b4b54;
+    color3:   #4b544e;
+    color4:   #5b5a54;
+    color5:   #84848c;
+    color6:   #998476;
+    color7:   #a1a1a1;
+    color8:   #434343;
+    color9:   #3c3e3a;
+    color10:  #4b4b54;
+    color11:  #4b544e;
+    color12:  #5b5a54;
+    color13:  #84848c;
+    color14:  #998476;
+    color15:  #a1a1a1;
 }
