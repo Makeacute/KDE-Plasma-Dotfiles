@@ -1,0 +1,78 @@
+#!/bin/bash
+# Advanced wlogout theming using pywal colors
+
+# Source pywal colors
+source ~/.cache/wal/colors.sh
+
+# Helper: convert #RRGGBB to rgba string with alpha (arg1: hex, arg2: alpha as float)
+hex_to_rgba() {
+  local hex=${1#"#"}
+  local alpha="$2"
+  local r=$((16#${hex:0:2}))
+  local g=$((16#${hex:2:2}))
+  local b=$((16#${hex:4:2}))
+  echo "rgba($r, $g, $b, $alpha)"
+}
+
+# Make window background semi-transparent, always matching pywal!
+WINDOW_BG=$(hex_to_rgba "$background" 0.80)
+BUTTON_HOVER_BG=$color4 # highlight
+BUTTON_BORDER=$color8   # subtle shade
+BUTTON_BG=$color0       # main background
+BUTTON_FG=$foreground
+BUTTON_HOVER_BORDER=$color1 # warning/danger color for a touch of drama
+
+# Output the CSS
+cat >~/.config/wlogout/style.css <<EOF
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: $WINDOW_BG;
+    border-radius: 10px;
+}
+
+button {
+    margin: 6px;
+    border-radius: 8px;
+    color: $BUTTON_FG;
+    background-color: $BUTTON_BG;
+    border-color: $BUTTON_BORDER;
+    border-style: solid;
+    border-width: 1px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    transition: background 0.1s, border-color 0.1s;
+}
+
+button:focus, button:active, button:hover {
+    background-color: $BUTTON_HOVER_BG;
+    color: $BUTTON_FG;
+    outline-style: none;
+    border-color: $BUTTON_HOVER_BORDER;
+}
+
+#lock {
+    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+#logout {
+    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+#suspend {
+    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+#windows {
+    background-image: image(url("$HOME/.local/share/wlogout/icons/windows.png"));
+}
+#shutdown {
+    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+#reboot {
+    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}
+EOF
+
+echo "Wlogout theme updated with pywal colors."
