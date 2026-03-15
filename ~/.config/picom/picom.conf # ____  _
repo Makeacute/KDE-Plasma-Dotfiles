@@ -1,0 +1,193 @@
+# ____  _
+#|  _ \(_) ___ ___  _ __ ___
+#| |_) | |/ __/ _ \| '_  _ \ \
+#|  __/| | (_| (_) | | | | | |
+#|_|   |_|\___\___/|_| |_| |_|
+
+# --- Picom configuration file ---                                                 
+
+# ____  _               _
+#/ ___|| |__   __ _  __| | _____      __
+#\___ \| '_ \ / _ |/ _ | |/ _ \ \ /\ / /
+# ___) | | | | (_| | (_| | (_) \ V  V /
+#|____/|_| |_|\__,_|\__,_|\___/ \_/\_/
+shadow = true;
+
+shadow-exclude = [
+    "name = 'Notification'",
+    "window_type = 'menu'",
+    "window_type = 'dropdown_menu'",
+    "window_type = 'popup_menu'",
+    "window_type = 'tooltip'",
+    "class_g = 'Polybar'"
+];
+
+# _____         _ _
+#|  ___|_ _  __| (_)_ __   __ _
+#| |_ / _ |/ _ | | '_ \ / /  _ |
+#|  _| (_| | (_| | | | | | (_| |
+#|_|  \__,_|\__,_|_|_| |_|\__, |
+#                         |___/ 
+
+fading = true;
+fade-in-step = 0.03;
+fade-out-step = 0.03;
+fade-delta = 3;
+no-fading-destroyed-argb = false;
+
+fade-exclude = [
+    "class_g = 'Rofi'"
+];
+
+#  ___                   _ _
+# / _ \ _ __   __ _  ___(_) |_ _   _
+#| | | | '_ \ / _ | / __| | __| | | |
+#| |_| | |_) | (_| | (__| | |_| |_| |
+# \___/| .__/ \__,_|\___|_|\__|\__, |
+#      |_|                     |___/
+
+inactive-opacity = 0.9;
+active-opacity = 0.9;
+
+opacity-rule = [ 
+    # Full opacity apps (games)
+    "100:class_g = 'org.vinegarhq.Sober'",
+    "100:class_g = 'Game'",
+    "100:class_g = 'geometrydash.exe'",
+
+    # Logout menu
+    "80:class_g = 'Wlogout'",
+
+    # Code editors
+    "80:focused && class_g = 'Code'",
+    "70:!focused && class_g = 'Code'",
+
+    "80:focused && class_g = 'Cursor'",
+    "70:!focused && class_g = 'Cursor'",
+
+    "80:focused && class_g = 'Windsurf'",
+    "70:!focused && class_g = 'Windsurf'",
+
+    "80:focused && class_g = 'dev.zed.Zed'",
+    "70:!focused && class_g = 'dev.zed.Zed'",
+
+    # Browsers
+    "80:focused && class_g = 'zen'",
+    "70:!focused && class_g = 'zen'",
+
+    "80:focused && class_g = 'firefox'",
+    "70:!focused && class_g = 'firefox'",
+
+    # Launcher
+    "80:class_g = 'Rofi'",
+
+    # File manager
+    "80:focused && class_g = 'dolphin'",
+    "70:!focused && class_g = 'dolphin'",
+
+    # Messaging
+    "80:class_g = 'TelegramDesktop'",
+
+    "80:focused && class_g = 'discord'",
+    "70:!focused && class_g = 'discord'",
+
+    # System
+    "80:class_g = 'Polybar'",
+    "80:class_g = 'Dunst'",
+    "80:window_type = 'notification'",
+
+    "80:focused && class_g = 'Lxappearance'",
+    "70:!focused && class_g = 'Lxappearance'",
+
+    # Music
+    "80:focused && class_g = 'Spotify'",
+    "70:!focused && class_g = 'Spotify'",
+
+    # Terminals
+    "80:focused && class_g = 'kitty'",
+    "70:!focused && class_g = 'kitty'",
+
+    "80:focused && class_g = 'St'",
+    "70:!focused && class_g = 'St'"
+];
+
+# ____  _                 _             
+#| __ )| |_   _ _ __ _ __(_)_ __   __ _ 
+#|  _ \| | | | | '__| '__| | '_ \ / _ |
+#| |_) | | |_| | |  | |  | | | | | (_| |
+#|____/|_|\__,_|_|  |_|  |_|_| |_|\__, |
+#                                 |___/ 
+
+blur: {
+    method = "dual_kawase";
+    strength = 5;
+}
+
+blur-background-exclude = [
+    "class_g = 'org.vinegarhq.Sober'",
+    "class_g = 'geometrydash.exe'",
+    "window_type = 'menu'",
+    "window_type = 'dropdown_menu'",
+    "window_type = 'tooltip'",
+    "window_type = 'desktop'",
+    "_GTK_FRAME_EXTENTS@:c"
+];
+
+#  ____                           _
+# / ___| ___ _ __   ___ _ __ __ _| |
+#| |  _ / _ \ '_ \ / _ \ '__/ _ | |
+#| |_| |  __/ | | |  __/ | | (_| | |
+# \____|\___|_| |_|\___|_|  \__,_|_|
+
+daemon = false;
+vsync = true;
+dbus = false;
+mark-wmwin-focused = true;
+mark-ovredir-focused = true;
+detect-rounded-corners = true;
+corner-radius = 15;
+
+rounded-corners-exclude = [
+    "class_g = 'Polybar'",
+    "window_type = 'desktop'",
+    "fullscreen"
+];
+
+detect-client-opacity = true;
+detect-transient = true;
+detect-client-leader = true;
+
+unredir-if-possible-exclude = [];
+invert-color-include = [];
+
+use-damage = true;
+transparent-clipping = false;
+log-level = "warn";
+show-all-xerrors = true;
+backend = "glx";
+
+animations = ({
+    triggers = ["geometry"];
+    preset = "geometry-change";
+    duration = 0.1;
+}, {
+    triggers = ["open"];
+    preset = "appear";
+    duration = 0.20;
+    scale = 0.88;
+}, {
+    triggers = ["close"];
+    preset = "disappear";
+    duration = 0.20;
+    scale = 0.88;
+}, {
+    triggers = ["show"];
+    preset = "appear";
+    scale = 0.90;
+    duration = 0.20;
+}, {
+    triggers = ["hide"];
+    preset = "disappear";
+    scale = 0.90;
+    duration = 0.20;
+})
