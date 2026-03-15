@@ -10,7 +10,7 @@ configuration {
     display-window: "Windows:";
 }
 
-@theme "tokyo"
+@theme "tokyo.rasi"
 
 * {
     font: "Hack 11";
@@ -55,7 +55,7 @@ prompt {
 
 entry {
     placeholder:        "Search";
-    placeholder-color:  @fg0;
+    placeholder-color:  @fg2;
 }
 
 message {
@@ -86,7 +86,7 @@ element {
 }
 
 element normal urgent {
-  text-color: @urgent;
+    text-color: @urgent;
 }
 
 element normal active {
@@ -94,7 +94,13 @@ element normal active {
 }
 
 element selected normal, element selected active {
-    background-color:   #2e2e2e;
+    background-color:   @selected;
+    text-color:         @accent;
+}
+
+element selected urgent {
+    background-color:   @selected;
+    text-color:         @urgent;
 }
 
 element-icon {
